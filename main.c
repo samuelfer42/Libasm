@@ -6,7 +6,7 @@
 /*   By: safernan <safernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 11:41:24 by safernan          #+#    #+#             */
-/*   Updated: 2021/04/17 10:49:46 by safernan         ###   ########.fr       */
+/*   Updated: 2021/04/17 11:05:47 by safernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ void	test_write()
 	int i;
 	int j;
 
-	printf("----------------\n");
-	printf("----FT_WRITE----\n");
-	printf("----------------\n\n");
+	printf("-----------------------------\n");
+	printf("-----------FT_WRITE----------\n");
+	printf("-----------------------------\n\n");
 
-	printf("%-15s : %s\n", "string", "\"\"");
+	printf("%-15s : %s\n", "Parametre", "\"\"");
 	i = ft_write(1, "", 0);
 	write(1, "\n", 1);
 	j = write(1, "", 0);
@@ -41,7 +41,7 @@ void	test_write()
 	printf("%-15s : %d\n", "ft_write return", i);
 	printf("%-15s : %d\n\n", "write return", j);
 
-	printf("%-15s : %s\n", "string", "\"Hola buenas ?\"");
+	printf("%-15s : %s\n", "Parametre", "\"Hola buenas ?\"");
 	i = ft_write(1, "Hola buenas ?", 14);
 	write(1, "\n", 1);
 	j = write(1, "Hola buenas ?", 14);
@@ -49,23 +49,47 @@ void	test_write()
 	printf("%-15s : %d\n", "ft_write return", i);
 	printf("%-15s : %d\n\n", "write return", j);
 
-	printf("%-15s : %s\n", "string", "\"0123446789\"");
-	i = ft_write(1, "0123446789", 10);
+	printf("%-15s : %s\n", "Parametre", "\"12345678\"");
+	i = ft_write(1, "12345678", 10);
 	write(1, "\n", 1);
-	j = write(1, "0123446789", 10);
+	j = write(1, "12345678", 10);
 	write(1, "\n", 1);
 	printf("%-15s : %d\n", "ft_write return", i);
 	printf("%-15s : %d\n\n", "write return", j);
 
-	printf("%-15s : %s\n", "string", "\"abcdefghijklmoopqrstuvwxyz\"");
-	i = ft_write(1, "abcdefghijklmoopqrstuvwxyz", 26);
+	printf("%-15s : %s\n", "Parametre", "\"sasexcgvhghewf54\"");
+	i = ft_write(1, "sasexcgvhghewf54", 26);
 	write(1, "\n", 1);
-	j = write(1, "abcdefghijklmoopqrstuvwxyz", 26);
+	j = write(1, "sasexcgvhghewf54", 26);
 	write(1, "\n", 1);
 	printf("%-15s : %d\n", "ft_write  return", i);
 	printf("%-15s : %d\n\n", "write  return", j);
 }
+
+void	test_strlen()
+{
+	printf("-------------------------------\n");
+	printf("-----------FT_STRLEN-----------\n");
+	printf("-------------------------------\n\n");
+
+	printf("%-15s : %s\n", "Parametre", "\"\"");
+	printf("%-15s : %zu\n", "ft_strlen return", ft_strlen(""));
+	printf("%-15s : %zu\n\n", "strlen return ", strlen(""));
+
+	printf("%-15s : %s\n", "Parametre", "\"Hola buenas ?\"");
+	printf("%-15s : %zu\n", "ft_strlen return", ft_strlen("Hola buenas ?"));
+	printf("%-15s : %zu\n\n", "strlen return", strlen("Hola buenas ?"));
+
+	printf("%-15s : %s\n", "Parametre", "\"12345678\"");
+	printf("%-15s : %zu\n", "ft_strlen return", ft_strlen("12345678"));
+	printf("%-15s : %zu\n\n", "strlen return", strlen("12345678"));
+
+	printf("%-15s : %s\n", "Parametre", "\"sasexcgvhghewf54\"");
+	printf("%-15s : %zu\n", "ft_strlen return", ft_strlen("sasexcgvhghewf54"));
+	printf("%-15s : %zu\n\n", "strlen return", strlen("sasexcgvhghewf54"));
+}
 int main()
 {
 	test_write();
+	test_strlen();
 }
