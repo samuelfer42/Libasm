@@ -5,7 +5,7 @@ SRCS	= ft_write.s
 OBJS	= ${SRCS:.s=.o}
 
 %.o:%.s
-		nasm -f elf64 $< -o $@
+		nasm -f macho64 $< -o $@
 
 
 $(NAME):	${OBJS}
