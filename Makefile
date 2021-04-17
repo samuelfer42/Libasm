@@ -1,6 +1,6 @@
 NAME	= libasm.a
 
-SRCS	= 
+SRCS	= ft_write.s
 
 OBJS	= ${SRCS:.s=.o}
 
