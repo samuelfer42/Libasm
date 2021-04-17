@@ -6,7 +6,7 @@
 /*   By: safernan <safernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 11:41:24 by safernan          #+#    #+#             */
-/*   Updated: 2021/04/17 10:31:47 by safernan         ###   ########.fr       */
+/*   Updated: 2021/04/17 10:49:46 by safernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,42 @@ void	test_write()
 {
 	int i;
 	int j;
-	printf("============================================\n");
-	printf("================ Ft_write ==================\n");
-	printf("============================================\n\n");
-	printf("\033[36mresultat : libasm\033[00m\n");
-	printf("\nreturn : [%zd]\n", ft_write(1, "Hello World !", 13));
-	printf("\033[36mresultat : libc\033[00m\n");
-	printf("\nreturn : [%zd]\n\n", write(1, "Hello World !", 13));
-	printf("\033[36mresultat : libasm\033[00m\n");
-	printf("\nreturn : [%zd]\n", ft_write(-7, "libasm is a project that was very interesting to me at the time and I am doing a test of my function with a rather large sentence without any goal, but here I fill as I can thank you for ignoring this sentence, there even punctuation or spelling, this is a crash test", 271));
-	printf("\033[36mresultat : libc\033[00m\n");
-	printf("\nreturn : [%zd]\n\n", write(-7, "libasm is a project that was very interesting to me at the time and I am doing a test of my function with a rather large sentence without any goal, but here I fill as I can thank you for ignoring this sentence, there even punctuation or spelling, this is a crash test", 271));
-	printf("\033[36mresultat : libasm\033[00m\n");
-	printf("\nreturn : [%zd]\n", ft_write(1, "", 1));
-	printf("\033[36mresultat : libc\033[00m\n");
-	printf("\nreturn : [%zd]\n\n", write(1, "", 1));
+
+	printf("----------------\n");
+	printf("----FT_WRITE----\n");
+	printf("----------------\n\n");
+
+	printf("%-15s : %s\n", "string", "\"\"");
+	i = ft_write(1, "", 0);
+	write(1, "\n", 1);
+	j = write(1, "", 0);
+	write(1, "\n", 1);
+	printf("%-15s : %d\n", "ft_write return", i);
+	printf("%-15s : %d\n\n", "write return", j);
+
+	printf("%-15s : %s\n", "string", "\"Hola buenas ?\"");
+	i = ft_write(1, "Hola buenas ?", 14);
+	write(1, "\n", 1);
+	j = write(1, "Hola buenas ?", 14);
+	write(1, "\n", 1);
+	printf("%-15s : %d\n", "ft_write return", i);
+	printf("%-15s : %d\n\n", "write return", j);
+
+	printf("%-15s : %s\n", "string", "\"0123446789\"");
+	i = ft_write(1, "0123446789", 10);
+	write(1, "\n", 1);
+	j = write(1, "0123446789", 10);
+	write(1, "\n", 1);
+	printf("%-15s : %d\n", "ft_write return", i);
+	printf("%-15s : %d\n\n", "write return", j);
+
+	printf("%-15s : %s\n", "string", "\"abcdefghijklmoopqrstuvwxyz\"");
+	i = ft_write(1, "abcdefghijklmoopqrstuvwxyz", 26);
+	write(1, "\n", 1);
+	j = write(1, "abcdefghijklmoopqrstuvwxyz", 26);
+	write(1, "\n", 1);
+	printf("%-15s : %d\n", "ft_write  return", i);
+	printf("%-15s : %d\n\n", "write  return", j);
 }
 int main()
 {
