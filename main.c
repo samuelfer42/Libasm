@@ -6,7 +6,7 @@
 /*   By: safernan <safernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 11:41:24 by safernan          #+#    #+#             */
-/*   Updated: 2021/04/17 11:05:47 by safernan         ###   ########.fr       */
+/*   Updated: 2021/04/17 11:08:38 by safernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 #include <fcntl.h>
 #include <stdlib.h>
 
-//extern size_t ft_strlen(char *str);
+extern ssize_t ft_write(int fd, const void *buf, size_t count);
+extern size_t ft_strlen(char *str);
 //extern int ft_strcmp(const char *s1, const char *s2);
 //extern char *ft_strcpy(char *dest, const char *src);
 //extern char *ft_strdup(const char *s);
-extern ssize_t ft_write(int fd, const void *buf, size_t count);
 //extern ssize_t ft_read(int fd, const void *buf, size_t count);
 
 void	test_write()
