@@ -6,7 +6,7 @@
 /*   By: safernan <safernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 11:41:24 by safernan          #+#    #+#             */
-/*   Updated: 2021/04/24 19:16:43 by safernan         ###   ########.fr       */
+/*   Updated: 2021/04/24 19:23:00 by safernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,9 +109,9 @@ void	test_strcpy()
 	printf("%-15s : %s\n", "ft_strcpy", ft_strcpy(s1, "Hola buenas ?"));
 	printf("%-15s : %s\n\n", "strcpy", strcpy(s1, "Hola buenas ?"));
 
-	printf("%-15s : %s\n", "string", "\"0123446789\"");
-	printf("%-15s : %s\n", "ft_strcpy", ft_strcpy(s2, "12344678"));
-	printf("%-15s : %s\n\n", "strcpy", strcpy(s2, "0123446789"));
+	printf("%-15s : %s\n", "string", "\"12345678\"");
+	printf("%-15s : %s\n", "ft_strcpy", ft_strcpy(s2, "12345678"));
+	printf("%-15s : %s\n\n", "strcpy", strcpy(s2, "12345678"));
 
 	printf("%-15s : %s\n", "string", "\"sasexcgvhghewf54\"");
 	printf("%-15s : %s\n", "ft_strcpy", ft_strcpy(s3, "sasexcgvhghewf54"));
