@@ -6,7 +6,7 @@
 /*   By: safernan <safernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 11:41:24 by safernan          #+#    #+#             */
-/*   Updated: 2021/04/24 18:48:02 by safernan         ###   ########.fr       */
+/*   Updated: 2021/04/24 18:51:13 by safernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,14 +64,6 @@ void	test_write()
 	write(1, "\n", 1);
 	printf("%-15s : %d\n", "ft_write  return", i);
 	printf("%-15s : %d\n\n", "write  return", j);
-
-	printf("%-15s : %s\n", "Test erreur d'ecriture ");
-	i = ft_write(1, "1234", 1);
-	write(1, "\n", 1);
-	j = write(1, "1234", 1);
-	write(1, "\n", 1);
-	printf("%-15s : %d\n", "ft_write return", i);
-	printf("%-15s : %d\n\n", "write return", j);
 }
 
 void	test_strlen()
