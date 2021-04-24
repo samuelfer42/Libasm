@@ -6,7 +6,7 @@
 /*   By: safernan <safernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 11:41:24 by safernan          #+#    #+#             */
-/*   Updated: 2021/04/24 18:51:13 by safernan         ###   ########.fr       */
+/*   Updated: 2021/04/24 19:16:43 by safernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 
 extern ssize_t ft_write(int fd, const void *buf, size_t count);
 extern size_t ft_strlen(char *str);
+extern char *ft_strcpy(char *dest, const char *src);
 //extern int ft_strcmp(const char *s1, const char *s2);
-//extern char *ft_strcpy(char *dest, const char *src);
 //extern char *ft_strdup(const char *s);
 //extern ssize_t ft_read(int fd, const void *buf, size_t count);
 
@@ -68,9 +68,9 @@ void	test_write()
 
 void	test_strlen()
 {
-	printf("-------------------------------\n");
-	printf("-----------FT_STRLEN-----------\n");
-	printf("-------------------------------\n\n");
+	printf("-----------------------------\n");
+	printf("-----------FT_STRCPY----------\n");
+	printf("-----------------------------\n\n");
 
 	printf("%-15s : %s\n", "Parametre", "\"\"");
 	printf("%-15s : %zu\n", "ft_strlen return", ft_strlen(""));
@@ -88,6 +88,41 @@ void	test_strlen()
 	printf("%-15s : %zu\n", "ft_strlen return", ft_strlen("sasexcgvhghewf54"));
 	printf("%-15s : %zu\n\n", "strlen return", strlen("sasexcgvhghewf54"));
 }
+
+void	test_strcpy()
+{
+	char *s1;
+	char *s2;
+	char *s3;
+	char *s4;
+
+	s1 = malloc(sizeof(char) * 14);
+	s2 = malloc(sizeof(char) * 9);
+	s3 = malloc(sizeof(char) * 17);
+	s4 = malloc(sizeof(char) * 1);
+
+	printf("-----------------\n");
+	printf("----FT_STRCPY----\n");
+	printf("-----------------\n\n");
+
+	printf("%-15s : %s\n", "string", "\"Hola buenas ?\"");
+	printf("%-15s : %s\n", "ft_strcpy", ft_strcpy(s1, "Hola buenas ?"));
+	printf("%-15s : %s\n\n", "strcpy", strcpy(s1, "Hola buenas ?"));
+
+	printf("%-15s : %s\n", "string", "\"0123446789\"");
+	printf("%-15s : %s\n", "ft_strcpy", ft_strcpy(s2, "12344678"));
+	printf("%-15s : %s\n\n", "strcpy", strcpy(s2, "0123446789"));
+
+	printf("%-15s : %s\n", "string", "\"sasexcgvhghewf54\"");
+	printf("%-15s : %s\n", "ft_strcpy", ft_strcpy(s3, "sasexcgvhghewf54"));
+	printf("%-15s : %s\n\n", "strcpy", strcpy(s3, "sasexcgvhghewf54"));
+
+	printf("%-15s : %s\n", "string", "\"\"");
+	printf("%-15s : %s\n", "ft_strcpy", ft_strcpy(s4, ""));
+	printf("%-15s : %s\n\n", "strcpy", strcpy(s4, ""));
+
+}
+
 int main()
 {
 	test_write();

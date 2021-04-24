@@ -3,16 +3,16 @@ section .text:
 
 ft_strcpy:
     mov rax, rdi
-    jmp loop
+    jmp boucle
 
-loop:
+boucle:
     mov bl, byte [rsi]
     cmp bl, 0
     je stop
     mov byte [rdi], bl
     inc rsi
     inc rdi
-    jmp loop
+    jmp boucle
 
 stop:
     mov byte [rdi], 0
