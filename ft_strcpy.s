@@ -1,5 +1,5 @@
-global			ft_strcpy
-section			.text
+section	.text:
+		global ft_strcpy
 
 ft_strcpy:
 	mov rcx, -1        
