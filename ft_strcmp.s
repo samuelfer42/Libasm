@@ -2,7 +2,7 @@ section .text
 		global ft_strcmp
  
 ft_strcmp:
-	mov rax, 0 ;initialise compteur a zero
+	mov rax, 0 
 
 loop:
 	mov al, byte [rdi]
@@ -20,4 +20,4 @@ stop:
     movzx rbx, byte [rsi]
     movzx rax, byte [rdi]
     sub rax, rbx
-	ret ;return final
+	ret

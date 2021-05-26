@@ -3,16 +3,16 @@ section .text:
         extern __errno_location
 
 ft_write:
-    mov rax, 1 ; syscall write = (rax = 1 )
-    syscall ; appel de write
-    cmp rax, 0 ; compare retour de write (rax) a 0
-    jl error ; si rax < 0 jump a erreur
-    ret ; return rax (valeur retour de write)
+    mov rax, 1
+    syscall
+    cmp rax, 0
+    jl error
+    ret
 
 error:
-    mov r15, rax ; save le retour de write (errno)
-    neg r15 ; inverse le signe
-    call __errno_location ; donne l'addresse de errno
-    mov [rax], r15 ; modifie errno
-    mov rax, -1 ; return -1
+    mov r15, rax
+    neg r15
+    call __errno_location
+    mov [rax], r15
+    mov rax, -1
     ret

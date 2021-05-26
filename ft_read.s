@@ -10,9 +10,9 @@ ft_read:
     ret
 
 error:
-    mov r15, rax ; sauvegarde le retour de write = errno
-    neg r15 ; inverse le signe
-    call __errno_location ; donne l'addresse de errno
-    mov [rax], r15 ; modifie errno
-    mov rax, -1 ; return -1
+    mov r15, rax
+    neg r15
+    call __errno_location
+    mov [rax], r15
+    mov rax, -1
     ret
