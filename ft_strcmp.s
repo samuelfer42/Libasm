@@ -1,4 +1,4 @@
-section .text:
+section .text
 		global ft_strcmp
  
 ft_strcmp:
@@ -20,4 +20,5 @@ stop:
     movzx rbx, byte [rsi]
     movzx rax, byte [rdi]
     sub rax, rbx
-	ret
+	ret 
+	
