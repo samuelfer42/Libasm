@@ -6,7 +6,7 @@
 /*   By: safernan <safernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 11:41:24 by safernan          #+#    #+#             */
-/*   Updated: 2021/05/26 15:54:45 by safernan         ###   ########.fr       */
+/*   Updated: 2021/05/26 16:15:58 by safernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ void	test_strcmp()
 	printf("%-15s : %d\n", "ft_strcmp", ft_strcmp("", "Salut ca va ?"));
 	printf("%-15s : %d\n\n", "strcmp", strcmp("", "Salut ca va ?"));
 
-	printf("%-15s : %s %s\n", "strings", "\"0123456789\"", "\"0123446789\"");
-	printf("%-15s : %d\n", "ft_strcmp", ft_strcmp("0123456789", "0123446789"));
-	printf("%-15s : %d\n\n", "strcmp", strcmp("0123456789", "0123446789"));
+	printf("%-15s : %s %s\n", "strings", "\"0123456789\"", "\"0123456789\"");
+	printf("%-15s : %d\n", "ft_strcmp", ft_strcmp("0123456789", "0123456789"));
+	printf("%-15s : %d\n\n", "strcmp", strcmp("0123456789", "0123456789"));
 
 	printf("%-15s : %s %s\n", "strings", "\"tropico\"", "\"caprisun\"");
 	printf("%-15s : %d\n", "ft_strcmp", ft_strcmp("tropico", "caprisun"));
@@ -105,10 +105,6 @@ void	test_strdup()
 	printf("----FT_STRDUP----\n");
 	printf("-----------------\n\n");
 
-	printf("%-15s : %s\n", "string", "");
-	printf("%-15s : %s\n", "ft_strdup", ft_strdup(""));
-	printf("%-15s : %s\n\n", "strdup", strdup(""));
-
 	printf("%-15s : %s\n", "string", "\"0123446789\"");
 	printf("%-15s : %s\n", "ft_strdup", ft_strdup("\"0123446789\""));
 	printf("%-15s : %s\n\n", "strdup", strdup("\"0123446789\""));
@@ -117,11 +113,7 @@ void	test_strdup()
 	printf("%-15s : %s\n", "ft_strdup", ft_strdup("abcdefghijklmoopqrstuvwxyz"));
 	printf("%-15s : %s\n\n", "strdup", strdup("abcdefghijklmoopqrstuvwxyz"));
 
-	printf("%-15s : %s\n", "string", "\"\"");
-	printf("%-15s : %s\n", "ft_strdup", ft_strdup(""));
-	printf("%-15s : %s\n\n", "strdup", strdup(""));
 }
-
 void	test_write()
 {
 	int i;
@@ -172,13 +164,10 @@ void	test_read()
 	int fd2;
 	char *s1;
 	char *s2;
-	char *s3;
-	char *s4;
 
 	s1 = malloc(sizeof(char) * 101);
 	s2 = malloc(sizeof(char) * 101);
-	s3 = malloc(sizeof(char) * 101);
-	s4 = malloc(sizeof(char) * 101);
+
 
 	printf("---------------\n");
 	printf("----FT_READ----\n");
@@ -191,12 +180,6 @@ void	test_read()
 	j = read(fd2, s2, 100);
 	printf("%-15s : %d \"%s\"\n", "ft_read", i, s1);
 	printf("%-15s : %d \"%s\"\n\n", "read", j, s2);
-
-	printf("%-15s : %s\n", "string", "stdin 100 chars max");
-	i = ft_read(0, s3, 100);
-	j = read(0, s4, 100);
-	printf("%-15s : %d \"%s\"\n", "ft_read", i, s3);
-	printf("%-15s : %d \"%s\"\n\n", "read", j, s4);
 }
 
 int main()
